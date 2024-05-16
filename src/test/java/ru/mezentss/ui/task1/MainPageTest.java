@@ -6,23 +6,15 @@ import org.junit.*;
 import ru.mezentss.ui.managers.DriverManager;
 import ru.mezentss.ui.managers.InitManager;
 
-public class MainPage {
+public class MainPageTest {
 
     private final DriverManager driverManager = DriverManager.getInstance();
 
     @BeforeClass
-    public static void beforeClass(){
-        InitManager.initFramework();
-    }
+    public static void beforeClass(){InitManager.initFramework();}
 
     @Before
-    public void before(){
-        driverManager.getDriver().get("https://lambdatest.github.io/sample-todo-app/");
-    }
-    @AfterClass
-    public static void after(){
-        InitManager.quitFramework();
-    }
+    public void before(){driverManager.getDriver().get("https://lambdatest.github.io/sample-todo-app/");}
 
     @Test
     @DisplayName("Тестирование списка дел \"LambdaTest Sample App\"")
@@ -42,4 +34,7 @@ public class MainPage {
                 .addNewItem("Sixth Item")
                 .checkboxByName("Sixth Item");
     }
+
+    @AfterClass
+    public static void after(){InitManager.quitFramework();}
 }
