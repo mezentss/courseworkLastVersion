@@ -56,17 +56,17 @@ public class StartPage extends BasePage{
     }
 
     @Step("Нажать на пункт меню '{menuItem}'")
-    public LaptopPage clickOnMenuItem(String menuItem) {
+    public HDDPage clickOnMenuItem(String menuItem) {
         for (WebElement item: menuItemList) {
             if (waitUntilElementToBeVisible(item).getText().equals(menuItem)){
                 moveToElement(item);
                 item.click();
                 logger.info("Переход на страницу с жёсткими дисками");
-                return pageManager.getLaptopPage();
+                return pageManager.getHDDPage();
             }
         }
         Assert.fail("Не найден пункт меню " + menuItem);
-        return pageManager.getLaptopPage();
+        return pageManager.getHDDPage();
     }
 
 }

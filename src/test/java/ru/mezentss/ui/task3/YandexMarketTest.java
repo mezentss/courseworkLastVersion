@@ -29,7 +29,7 @@ public class YandexMarketTest {
 
     @Test
     @DisplayName("Яндекс Маркет: проверка сортировки товаров по цене")
-    public void test(){
+    public void test() throws InterruptedException{
         StartPage startPage  = new StartPage();
         startPage.checkOpenPage()
                 .clickOnCatalog()
@@ -37,6 +37,6 @@ public class YandexMarketTest {
                 .clickOnMenuItem("Внутренние жесткие диски")
                 .logProducts()
                 .setSortingLowPrice()
-                .checkPricesOrder();
+                .verifyProductsSortedByPrice();
     }
 }

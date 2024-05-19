@@ -5,7 +5,7 @@ public class PageManager {
 
     private static PageManager INSTANCE = null;
     private StartPage startPage;
-    private LaptopPage laptopPage;
+    private HDDPage hddPage;
 
     private PageManager() {
     }
@@ -24,11 +24,11 @@ public class PageManager {
         return startPage;
     }
 
-    public LaptopPage getLaptopPage() {
-        if (laptopPage == null) {
-            laptopPage = new LaptopPage();
+    public HDDPage getHDDPage() {
+        if (hddPage == null) {
+            hddPage = new HDDPage();
         }
-        return laptopPage;
+        return hddPage;
     }
 
 }

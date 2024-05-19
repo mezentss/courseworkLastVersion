@@ -20,7 +20,7 @@ public class LanguageChangeTest {
 
     @Test
     @DisplayName("Изменение языка интерфейса")
-    public void GoogleSearchTest(){
+    public void GoogleSearchTest() throws InterruptedException{
         googleSearch.openPage()
                 .openSettings()
                 .openSearchSettings()

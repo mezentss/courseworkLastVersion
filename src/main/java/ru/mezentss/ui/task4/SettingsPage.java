@@ -56,7 +56,8 @@ public class SettingsPage extends BasePage {
     }
 
     @Step("Выбор языка")
-    public SettingsPage chooseLanguage(){
+    public synchronized SettingsPage chooseLanguage() throws InterruptedException{
+        wait(2000);
         waitUntilElementToBeVisible(chooseLanguage);
         chooseLanguage.click();
         waitUntilElementToBeVisible(findLanguage("de"));
