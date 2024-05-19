@@ -25,7 +25,7 @@ public class SettingsPage extends BasePage {
     @FindBy(xpath = "/html/body/div[2]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/span[2]/span")
     private WebElement chooseLanguage;
 
-    @FindBy(xpath = "//div[@class='Q1bVje'][.//span[@data-value='de']]")
+    @FindBy(xpath = "//span[@data-value='de']")
     private WebElement language;
 
     @FindBy(xpath = "/html/body/div[6]/div/div[2]/span/div/g-menu/g-menu-item[1]/div/span")
@@ -67,7 +67,6 @@ public class SettingsPage extends BasePage {
 
     @Step("Проверка выбора языка")
     public SettingsPage validateLanguage() {
-        waitUntilElementToBeVisible(language);
         Assert.assertTrue(language.getAttribute("data-value").equals("de"));
         logger.info("Проверка выбора языка");
         return this;
