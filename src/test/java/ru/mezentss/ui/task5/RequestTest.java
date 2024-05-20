@@ -102,7 +102,7 @@ public class RequestTest {
 
     @Test
     @DisplayName("Получить ресурс с id=22")
-    public void getResourseNotFound() {
+    public void getResourceNotFound() {
         given().
                 when()
                 .get("https://reqres.in/api/unknown/22")

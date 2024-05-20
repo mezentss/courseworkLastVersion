@@ -57,7 +57,7 @@ public class TranslatePage extends BasePage {
 
     @Step("Проверка перевода текста")
     public synchronized TranslatePage checkTranslation(String text) throws InterruptedException {
-        wait(2000);
+        wait(3000);
         waitUntilElementToBeVisible(outputText);
         System.out.println(outputText.getText());
         Assert.assertTrue("Перевод не соответствует", outputText.getText().contains(text));
