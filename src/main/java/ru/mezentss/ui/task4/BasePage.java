@@ -15,7 +15,7 @@ import java.util.List;
 public class BasePage {
 
     protected DriverManager driverManager = DriverManager.getInstance();
-    protected WebDriverWait wait = new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(10));
+    protected WebDriverWait wait = new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(1000));
 
 
     public BasePage() {
@@ -24,16 +24,6 @@ public class BasePage {
 
     protected WebElement waitUntilElementToBeVisible(WebElement element) {
         return wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
-    protected void scrollToElementJs(WebElement element) {
-        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driverManager.getDriver();
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
-    }
-
-    protected void moveToElement(WebElement element) {
-        Actions action = new Actions(driverManager.getDriver());
-        action.moveToElement(element).build().perform();
     }
 
     public WebElement findLanguage(String languageName){

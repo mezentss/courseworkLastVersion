@@ -44,7 +44,7 @@ public class HDDPage extends BasePage{
 
     @Step("Проверить, что товары отсортированы по возрастанию цены")
     public synchronized HDDPage verifyProductsSortedByPrice() throws InterruptedException{
-        wait(2000);
+        wait(3000);
         List<WebElement> productListSorted = driverManager.getDriver().findElements(By.xpath("//div[@data-auto-themename='listDetailed']"));
         boolean isSorted = true;
         for (int i = 1; i < 11; i++) {
