@@ -36,5 +36,10 @@ public class BasePage {
         Actions action = new Actions(driverManager.getDriver());
         action.moveToElement(element).build().perform();
     }
+
+    protected void scrollToTop() {
+        JavascriptExecutor js = (JavascriptExecutor) driverManager.getDriver();
+        js.executeScript("window.scrollTo(0,0)");
+    }
 }
 

@@ -18,7 +18,7 @@ public class StartPage extends BasePage {
     @FindBy(xpath = "//h3")
     private List<WebElement> results;
 
-    @FindBy(xpath = "/html/body/div[4]/div/div[5]/div/div[1]/div/div/div[1]/div/div/div/div/div[1]/div/div[4]/a/div")
+    @FindBy(xpath = "//div[starts-with(., \"Новости\")]")
     private WebElement newsTab;
 
     @FindBy(xpath = "//div[@data-hveid='CAoQAA']")

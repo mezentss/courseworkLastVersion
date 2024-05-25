@@ -37,7 +37,8 @@ public class HDDPage extends BasePage{
     }
 
     @Step("Установить сортировку: подешевле")
-    public HDDPage setSortingLowPrice() {
+    public synchronized HDDPage setSortingLowPrice() throws InterruptedException {
+        scrollToTop();
         sort.click();
         return this;
     }
